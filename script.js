@@ -19,3 +19,16 @@ function multiplyNumber(a,b) {
 function divideNumber(a,b) {
     return a/b
 }
+
+function operatorNumbers() {
+
+    numberOne
+    operator
+    numberTwo
+
+    addNumber(numberOne, numberTwo)
+    subtractNumber(numberOne,numberTwo)
+    multiplyNumber(numberOne,numberTwo)
+    divideNumber(numberOne,numberTwo)
+    
+}
