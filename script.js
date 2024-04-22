@@ -113,15 +113,27 @@ const zero = document.querySelector('button#number-zero')
 zero.addEventListener('click',
 function() {
     if (result.textContent.includes('+') === false) {
-
-        result.textContent += `${this.textContent}`
-        numberOne = Number(result.textContent)
+        
+        if(result.textContent === '') {
+            result.textContent
+        }
+        else {
+            
+            result.textContent += `${this.textContent}`
+            numberOne = Number(result.textContent)
+        }
     }
     else if (result.textContent.includes('+')) {
 
-        result.textContent += `${this.textContent}`
-        let positionTwo = result.textContent.slice(result.textContent.indexOf('+')+1)
-        numberTwo = Number(positionTwo)
+        if (result.textContent.charAt(result.textContent.indexOf('+') + 2) === '') {
+            result.textContent
+        }
+        else {
+
+            result.textContent += `${this.textContent}`
+            let positionTwo = result.textContent.slice(result.textContent.indexOf('+')+1)
+            numberTwo = Number(positionTwo)
+        }
     }
     }
 )
