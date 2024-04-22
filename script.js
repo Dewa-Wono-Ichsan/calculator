@@ -38,18 +38,17 @@ const result = document.querySelector('.result-number')
 const one = document.querySelector('button#number-one')
 one.addEventListener('click',
 function() {
+
     if (result.textContent.includes('+') === false) {
 
-        numberOne = 1
-        result.textContent += `${numberOne}`
+        
+        result.textContent += `${this.textContent}`
         numberOne = Number(result.textContent)
-        console.log(numberOne);
     }
     else if (result.textContent.includes('+')) {
-        numberTwo = 1
-        result.textContent += `${numberTwo}`
+    
+        result.textContent += `${this.textContent}`
         numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
-        console.warn(numberTwo)
     }
     }
 )
@@ -113,7 +112,17 @@ function() {
 const zero = document.querySelector('button#number-zero')
 zero.addEventListener('click',
 function() {
-    result.textContent = numberOne = 0
+    if (result.textContent.includes('+') === false) {
+
+        result.textContent += `${this.textContent}`
+        numberOne = Number(result.textContent)
+    }
+    else if (result.textContent.includes('+')) {
+
+        result.textContent += `${this.textContent}`
+        let positionTwo = result.textContent.slice(result.textContent.indexOf('+')+1)
+        numberTwo = Number(positionTwo)
+    }
     }
 )
 
