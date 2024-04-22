@@ -38,7 +38,19 @@ const result = document.querySelector('.result-number')
 const one = document.querySelector('button#number-one')
 one.addEventListener('click',
 function() {
-    result.textContent = numberOne = 1
+    if (result.textContent.includes('+') === false) {
+
+        numberOne = 1
+        result.textContent += `${numberOne}`
+        numberOne = Number(result.textContent)
+        console.log(numberOne);
+    }
+    else if (result.textContent.includes('+')) {
+        numberTwo = 1
+        result.textContent += `${numberTwo}`
+        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
+        console.warn(numberTwo)
+    }
     }
 )
 
@@ -104,3 +116,13 @@ function() {
     result.textContent = numberOne = 0
     }
 )
+
+const add = document.querySelector('.container-operator>button:nth-child(1)')
+add.addEventListener('click', () => result.textContent += ' + ')
+
+const equal = document.querySelector('#equal-sign')
+equal.addEventListener('click', () => {
+    if (result.textContent.includes('+')) {
+    result.textContent = `${numberOne + numberTwo}`
+    }
+})
