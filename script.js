@@ -147,3 +147,6 @@ equal.addEventListener('click', () => {
     result.textContent = `${numberOne + numberTwo}`
     }
 })
+
+const clear = document.querySelector('#clear')
+clear.addEventListener('click', () => result.textContent = '')
