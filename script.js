@@ -186,3 +186,17 @@ equal.addEventListener('click', () => {
 
 const clear = document.querySelector('#clear')
 clear.addEventListener('click', () => result.textContent = '')
+
+const undo = document.querySelector('button#undo')
+undo.addEventListener('click', function() {
+
+        if (result.textContent.at(-2) === ' ') {
+
+                result.textContent = result.textContent.split('').toSpliced(result.textContent.length-2).join('')
+            }
+        else {
+
+                result.textContent = result.textContent.split('').toSpliced(result.textContent.length-1).join('')
+            }    
+    }
+)
