@@ -138,6 +138,42 @@ function() {
     }
 )
 
+const decimal = document.querySelector('button#decimal-sign')
+decimal.addEventListener('click', function() {
+
+        if (result.textContent.includes('+') === false) {
+        
+            if(result.textContent === '') {
+
+                result.textContent = 0 + this.textContent
+            }
+            else if (result.textContent.includes('.')) {
+            
+                result.textContent
+            } 
+            else {
+
+                result.textContent += this.textContent
+            }
+        }
+        else if (result.textContent.includes('+')) {
+
+            if (result.textContent.charAt(result.textContent.indexOf('+') + 2) === '') {
+
+                result.textContent += 0 + this.textContent
+            }
+            else if (result.textContent.slice(result.textContent.indexOf('+') + 1).includes('.') === false) {
+                
+                result.textContent += this.textContent
+            }
+            else {
+
+            result.textContent
+            }
+        }
+    }
+)
+
 const add = document.querySelector('.container-operator>button:nth-child(1)')
 add.addEventListener('click', () => result.textContent += ' + ')
 
