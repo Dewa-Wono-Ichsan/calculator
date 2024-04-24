@@ -190,13 +190,23 @@ clear.addEventListener('click', () => result.textContent = '')
 const undo = document.querySelector('button#undo')
 undo.addEventListener('click', function() {
 
-        if (result.textContent.at(-2) === ' ') {
+    if (result.textContent.at(-2) === ' ') {
 
-                result.textContent = result.textContent.split('').toSpliced(result.textContent.length-2).join('')
+            result.textContent = result.textContent.split('').toSpliced(result.textContent.length-2).join('')
+            numberTwo = 0
+        }
+    else {
+
+            result.textContent = result.textContent.split('').toSpliced(result.textContent.length-1).join('')
+
+            if (result.textContent.includes('+') === true) {
+
+                numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
+            } 
+            else if (result.textContent.includes('+') === false) {
+
+                numberOne = Number(result.textContent)
             }
-        else {
-
-                result.textContent = result.textContent.split('').toSpliced(result.textContent.length-1).join('')
-            }    
+        }    
     }
 )
