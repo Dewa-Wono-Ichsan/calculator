@@ -186,7 +186,10 @@ add.addEventListener('click', () => result.textContent += ' + ')
 const equal = document.querySelector('#equal-sign')
 equal.addEventListener('click', () => {
     if (result.textContent.includes('+')) {
-    result.textContent = `${numberOne + numberTwo}`
+    
+        result.textContent = `${numberOne + numberTwo}`
+        numberOne = Number(result.textContent)
+        numberTwo = 0
     }
 })
 
