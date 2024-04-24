@@ -45,9 +45,15 @@ function() {
         result.textContent += `${this.textContent}`
         numberOne = Number(result.textContent)
     }
-    else if (result.textContent.includes('+')) {
-    
-        result.textContent += `${this.textContent}`
+    else if (result.textContent.includes('+') === true) {
+        if (result.textContent.at(-1) === '+') {
+            
+            result.textContent += ` ${this.textContent}`
+        } 
+        else {
+            
+            result.textContent += `${this.textContent}`
+        }
         numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
     }
     }
