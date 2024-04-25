@@ -208,7 +208,12 @@ equal.addEventListener('click', () => {
 })
 
 const clear = document.querySelector('#clear')
-clear.addEventListener('click', () => result.textContent = '')
+clear.addEventListener('click', () => {
+    result.textContent = ''
+    numberOne = 0
+    numberTwo = 0
+    }
+)
 
 const undo = document.querySelector('button#undo')
 undo.addEventListener('click', function() {
