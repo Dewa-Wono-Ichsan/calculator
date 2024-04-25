@@ -181,10 +181,24 @@ decimal.addEventListener('click', function() {
 )
 
 const add = document.querySelector('.container-operator>button:nth-child(1)')
-add.addEventListener('click', () => result.textContent += ' + ')
+add.addEventListener('click', function() {
+    
+    if (result.textContent.includes(`${this.textContent}`) === false) {
+
+        result.textContent += ` ${this.textContent} `
+    } 
+    else if (result.textContent.includes(`${this.textContent}`) === true) {
+
+        result.textContent = `${numberOne + numberTwo} ${this.textContent}`
+        numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${this.textContent}`)))
+        numberTwo = 0
+    }
+    }
+)
 
 const equal = document.querySelector('#equal-sign')
 equal.addEventListener('click', () => {
+
     if (result.textContent.includes('+')) {
     
         result.textContent = `${numberOne + numberTwo}`
