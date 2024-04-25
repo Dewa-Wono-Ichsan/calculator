@@ -190,6 +190,16 @@ add.addEventListener('click', function() {
     else if (result.textContent.includes(`${this.textContent}`) === true) {
 
         result.textContent = `${numberOne + numberTwo} ${this.textContent}`
+        
+        if (result.textContent.includes('.') === true 
+            && result.textContent
+                .slice(
+                    result.textContent
+                    .indexOf('.'))
+                .length > 2
+            ) {
+            result.textContent = `${(numberOne + numberTwo).toFixed(2)} ${this.textContent}`
+        }
         numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${this.textContent}`)))
         numberTwo = 0
     }
@@ -202,6 +212,17 @@ equal.addEventListener('click', () => {
     if (result.textContent.includes('+')) {
     
         result.textContent = `${numberOne + numberTwo}`
+        
+        if (result.textContent.includes('.') === true 
+            && result.textContent
+            .slice(
+                    result.textContent
+                    .indexOf('.'))
+            .length > 2) {
+
+            result.textContent = `${(numberOne + numberTwo).toFixed(2)}`
+        }
+
         numberOne = Number(result.textContent)
         numberTwo = 0
     }
