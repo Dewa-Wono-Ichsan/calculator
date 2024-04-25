@@ -208,7 +208,7 @@ equal.addEventListener('click', () => {
 })
 
 const clear = document.querySelector('#clear')
-clear.addEventListener('click', () => {
+clear.addEventListener('click', function() {
     result.textContent = ''
     numberOne = 0
     numberTwo = 0
