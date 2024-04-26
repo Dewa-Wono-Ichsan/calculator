@@ -39,23 +39,37 @@ const one = document.querySelector('button#number-one')
 one.addEventListener('click',
 function() {
 
-    if (result.textContent.includes('+') === false) {
+        if (result.textContent.includes('+') === false
+            && result.textContent.includes('-') === false) {
 
         
-        result.textContent += `${this.textContent}`
-        numberOne = Number(result.textContent)
-    }
-    else if (result.textContent.includes('+') === true) {
-        if (result.textContent.at(-1) === '+') {
-            
-            result.textContent += ` ${this.textContent}`
-        } 
-        else {
-            
             result.textContent += `${this.textContent}`
+            numberOne = Number(result.textContent)
         }
-        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
-    }
+        else if (result.textContent.includes('+') === true) {
+            
+            if (result.textContent.at(-1) === '+') {
+            
+                result.textContent += ` ${this.textContent}`
+            } 
+            else {
+            
+                result.textContent += `${this.textContent}`
+            }
+            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
+        }
+        else if (result.textContent.includes('-') === true) {
+            
+            if (result.textContent.at(-1) === '-') {
+            
+                result.textContent += ` ${this.textContent}`
+            } 
+            else {
+            
+                result.textContent += `${this.textContent}`
+            }
+            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('-') + 1))
+        }
     }
 )
 
@@ -183,26 +197,52 @@ decimal.addEventListener('click', function() {
 const add = document.querySelector('.container-operator>button:nth-child(1)')
 add.addEventListener('click', function() {
     
-    if (result.textContent.includes(`${this.textContent}`) === false) {
+        if (result.textContent.includes(`${this.textContent}`) === false) {
 
-        result.textContent += ` ${this.textContent} `
-    } 
-    else if (result.textContent.includes(`${this.textContent}`) === true) {
+            result.textContent += ` ${this.textContent} `
+        } 
+        else if (result.textContent.includes(`${this.textContent}`) === true) {
 
-        result.textContent = `${numberOne + numberTwo} ${this.textContent}`
+            result.textContent = `${numberOne + numberTwo} ${this.textContent}`
         
-        if (result.textContent.includes('.') === true 
-            && result.textContent
-                .slice(
-                    result.textContent
-                    .indexOf('.'))
-                .length > 2
-            ) {
-            result.textContent = `${(numberOne + numberTwo).toFixed(2)} ${this.textContent}`
+            if (result.textContent.includes('.') === true 
+                && result.textContent
+                    .slice(
+                        result.textContent
+                        .indexOf('.') )
+                    .length > 2
+                ) {
+                result.textContent = `${(numberOne + numberTwo).toFixed(2)} ${this.textContent}`
+            }
+            numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${this.textContent}`)))
+            numberTwo = 0
         }
-        numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${this.textContent}`)))
-        numberTwo = 0
     }
+)
+
+const subtract = document.querySelector('.container-operator>button:nth-child(2)')
+subtract.addEventListener('click', function() {
+    
+        if (result.textContent.includes(`${this.textContent}`) === false) {
+
+            result.textContent += ` ${this.textContent} `
+        } 
+        else if (result.textContent.includes(`${this.textContent}`) === true) {
+
+            result.textContent = `${numberOne - numberTwo} ${this.textContent}`
+        
+            if (result.textContent.includes('.') === true 
+                && result.textContent
+                    .slice(
+                        result.textContent
+                        .indexOf('.'))
+                    .length > 2
+                ) {
+                result.textContent = `${(numberOne - numberTwo).toFixed(2)} ${this.textContent}`
+            }
+            numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${this.textContent}`)))
+            numberTwo = 0
+        }
     }
 )
 
