@@ -159,7 +159,7 @@ function() {
         }
         else if (result.textContent.includes('-') === true) {
 
-            if (result.textContent.charAt(result.textContent.indexOf('+') + 2) === '') {
+            if (result.textContent.charAt(result.textContent.indexOf('-') + 2) === '') {
                 result.textContent
             }
             else {
