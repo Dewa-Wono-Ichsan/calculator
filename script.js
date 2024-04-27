@@ -211,7 +211,8 @@ decimal.addEventListener('click', function() {
 const add = document.querySelector('.container-operator>button:nth-child(1)')
 add.addEventListener('click', function() {
     
-        if (result.textContent.includes(`${this.textContent}`) === false) {
+        if (result.textContent.includes(`${this.textContent}`) === false
+            && result.textContent.includes('-') === false) {
 
             result.textContent += ` ${this.textContent} `
         } 
@@ -219,7 +220,7 @@ add.addEventListener('click', function() {
 
             result.textContent = `${numberOne + numberTwo} ${this.textContent}`
         
-            if (result.textContent.includes('.') === true 
+            if (result.textContent.includes('.') === true
                 && result.textContent
                     .slice(
                         result.textContent
@@ -229,6 +230,22 @@ add.addEventListener('click', function() {
                 result.textContent = `${(numberOne + numberTwo).toFixed(2)} ${this.textContent}`
             }
             numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${this.textContent}`)))
+            numberTwo = 0
+        }
+        else if (result.textContent.includes('-') === true) {
+
+            result.textContent = `${numberOne - numberTwo} ${this.textContent}`
+        
+            if (result.textContent.includes('.') === true
+                && result.textContent
+                    .slice(
+                        result.textContent
+                        .indexOf('.') )
+                    .length > 2
+                ) {
+                result.textContent = `${(numberOne - numberTwo).toFixed(2)} ${this.textContent}`
+            }
+            numberOne = Number(result.textContent.slice(0, result.textContent.indexOf('-')))
             numberTwo = 0
         }
     }
