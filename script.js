@@ -249,24 +249,38 @@ subtract.addEventListener('click', function() {
 const equal = document.querySelector('#equal-sign')
 equal.addEventListener('click', () => {
 
-    if (result.textContent.includes('+')) {
+        if (result.textContent.includes('+')) {
     
-        result.textContent = `${numberOne + numberTwo}`
+            result.textContent = `${numberOne + numberTwo}`
         
-        if (result.textContent.includes('.') === true 
-            && result.textContent
-            .slice(
-                    result.textContent
-                    .indexOf('.'))
-            .length > 2) {
+            if (result.textContent.includes('.') === true 
+                && result.textContent
+                .slice(
+                        result.textContent
+                        .indexOf('.'))
+                .length > 2) {
 
-            result.textContent = `${(numberOne + numberTwo).toFixed(2)}`
+                result.textContent = `${(numberOne + numberTwo).toFixed(2)}`
+            }
         }
+        else if (result.textContent.includes('-')) {
 
+            result.textContent = `${numberOne - numberTwo}`
+
+            if (result.textContent.includes('.') === true 
+                && result.textContent
+                .slice(
+                        result.textContent
+                        .indexOf('.'))
+                .length > 2) {
+
+                result.textContent = `${(numberOne - numberTwo).toFixed(2)}`
+            }
+        }
         numberOne = Number(result.textContent)
         numberTwo = 0
     }
-})
+)
 
 const clear = document.querySelector('#clear')
 clear.addEventListener('click', function() {
