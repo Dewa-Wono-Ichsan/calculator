@@ -435,6 +435,20 @@ equal.addEventListener('click', () => {
                 result.textContent = `${(numberOne - numberTwo).toFixed(2)}`
             }
         }
+        else if (result.textContent.includes('x')) {
+
+            result.textContent = `${numberOne * numberTwo}`
+
+            if (result.textContent.includes('.') === true 
+                && result.textContent
+                .slice(
+                        result.textContent
+                        .indexOf('.'))
+                .length > 2) {
+
+                result.textContent = `${(numberOne * numberTwo).toFixed(2)}`
+            }
+        }
         numberOne = Number(result.textContent)
         numberTwo = 0
     }
