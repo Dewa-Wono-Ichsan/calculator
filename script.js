@@ -310,6 +310,11 @@ subtract.addEventListener('click', function() {
     }
 )
 
+const multiply = document.querySelector('.container-operator > button:nth-child(3)')
+multiply.addEventListener('click', function() {
+    
+})
+
 const equal = document.querySelector('#equal-sign')
 equal.addEventListener('click', () => {
 
