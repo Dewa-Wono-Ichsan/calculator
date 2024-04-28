@@ -302,7 +302,7 @@ subtract.addEventListener('click', function() {
                         .indexOf('.'))
                     .length > 2
                 ) {
-                result.textContent = `${(numberOne - numberTwo).toFixed(2)} ${this.textContent}`
+                result.textContent = `${(numberOne + numberTwo).toFixed(2)} ${this.textContent}`
             }
             numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${this.textContent}`)))
             numberTwo = 0
