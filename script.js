@@ -175,7 +175,8 @@ function() {
 const decimal = document.querySelector('button#decimal-sign')
 decimal.addEventListener('click', function() {
 
-        if (result.textContent.includes('+') === false) {
+        if (result.textContent.includes('+') === false
+            && result.textContent.includes('-') === false) {
         
             if(result.textContent === '') {
 
@@ -190,13 +191,28 @@ decimal.addEventListener('click', function() {
                 result.textContent += this.textContent
             }
         }
-        else if (result.textContent.includes('+')) {
+        else if (result.textContent.includes('+') === true) {
 
             if (result.textContent.charAt(result.textContent.indexOf('+') + 2) === '') {
 
-                result.textContent += 0 + this.textContent
+                result.textContent += ` ${0 + this.textContent}`
             }
             else if (result.textContent.slice(result.textContent.indexOf('+') + 1).includes('.') === false) {
+                
+                result.textContent += this.textContent
+            }
+            else {
+
+            result.textContent
+            }
+        }
+        else if (result.textContent.includes('-') === true) {
+
+            if (result.textContent.charAt(result.textContent.indexOf('-') + 2) === '') {
+
+                result.textContent += ` ${0 + this.textContent}`
+            }
+            else if (result.textContent.slice(result.textContent.indexOf('-') + 1).includes('.') === false) {
                 
                 result.textContent += this.textContent
             }
