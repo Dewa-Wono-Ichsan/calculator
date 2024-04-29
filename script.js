@@ -40,7 +40,8 @@ one.addEventListener('click',
 function() {
 
         if (result.textContent.includes('+') === false
-            && result.textContent.includes('-') === false) {
+            && result.textContent.includes('-') === false
+            && result.textContent.includes('x') === false) {
 
         
             result.textContent += `${this.textContent}`
@@ -69,6 +70,18 @@ function() {
                 result.textContent += `${this.textContent}`
             }
             numberTwo = Number(result.textContent.slice(result.textContent.indexOf('-') + 1))
+        }
+        else if (result.textContent.includes('x') === true) {
+            
+            if (result.textContent.at(-1) === 'x') {
+            
+                result.textContent += ` ${this.textContent}`
+            } 
+            else {
+            
+                result.textContent += `${this.textContent}`
+            }
+            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('x') + 1))
         }
     }
 )
