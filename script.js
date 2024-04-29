@@ -202,7 +202,8 @@ const decimal = document.querySelector('button#decimal-sign')
 decimal.addEventListener('click', function() {
 
         if (result.textContent.includes('+') === false
-            && result.textContent.includes('-') === false) {
+            && result.textContent.includes('-') === false
+            && result.textContent.includes('x') === false) {
         
             if(result.textContent === '') {
 
@@ -239,6 +240,21 @@ decimal.addEventListener('click', function() {
                 result.textContent += ` ${0 + this.textContent}`
             }
             else if (result.textContent.slice(result.textContent.indexOf('-') + 1).includes('.') === false) {
+                
+                result.textContent += this.textContent
+            }
+            else {
+
+            result.textContent
+            }
+        }
+        else if (result.textContent.includes('x') === true) {
+
+            if (result.textContent.charAt(result.textContent.indexOf('x') + 2) === '') {
+
+                result.textContent += ` ${0 + this.textContent}`
+            }
+            else if (result.textContent.slice(result.textContent.indexOf('x') + 1).includes('.') === false) {
                 
                 result.textContent += this.textContent
             }
