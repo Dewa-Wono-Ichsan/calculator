@@ -611,17 +611,22 @@ equal.addEventListener('click', () => {
             }
         }
         else if (result.textContent.includes('/')) {
+            if (numberTwo === 0) {
+                alert('cannot divide with number zero')
+            }
+            else if (numberTwo > 0) {
 
-            result.textContent = `${numberOne / numberTwo}`
-
-            if (result.textContent.includes('.') === true 
-                && result.textContent
-                .slice(
-                        result.textContent
-                        .indexOf('.'))
-                .length > 2) {
-
-                result.textContent = `${(numberOne / numberTwo).toFixed(2)}`
+                result.textContent = `${numberOne / numberTwo}`
+    
+                if (result.textContent.includes('.') === true 
+                    && result.textContent
+                    .slice(
+                            result.textContent
+                            .indexOf('.'))
+                    .length > 2) {
+    
+                    result.textContent = `${(numberOne / numberTwo).toFixed(2)}`
+                }
             }
         }
         numberOne = Number(result.textContent)
