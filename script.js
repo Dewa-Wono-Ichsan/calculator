@@ -41,7 +41,8 @@ function() {
 
         if (result.textContent.includes('+') === false
             && result.textContent.includes('-') === false
-            && result.textContent.includes('x') === false) {
+            && result.textContent.includes('x') === false
+            && result.textContent.includes('/') === false) {
 
         
             result.textContent += `${this.textContent}`
@@ -82,6 +83,18 @@ function() {
                 result.textContent += `${this.textContent}`
             }
             numberTwo = Number(result.textContent.slice(result.textContent.indexOf('x') + 1))
+        }
+        else if (result.textContent.includes('/') === true) {
+            
+            if (result.textContent.at(-1) === '/') {
+            
+                result.textContent += ` ${this.textContent}`
+            } 
+            else {
+            
+                result.textContent += `${this.textContent}`
+            }
+            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('/') + 1))
         }
     }
 )
@@ -566,6 +579,20 @@ equal.addEventListener('click', () => {
                 .length > 2) {
 
                 result.textContent = `${(numberOne * numberTwo).toFixed(2)}`
+            }
+        }
+        else if (result.textContent.includes('/')) {
+
+            result.textContent = `${numberOne / numberTwo}`
+
+            if (result.textContent.includes('.') === true 
+                && result.textContent
+                .slice(
+                        result.textContent
+                        .indexOf('.'))
+                .length > 2) {
+
+                result.textContent = `${(numberOne / numberTwo).toFixed(2)}`
             }
         }
         numberOne = Number(result.textContent)
