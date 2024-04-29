@@ -160,7 +160,8 @@ zero.addEventListener('click',
 function() {
         if (result.textContent.includes('+') === false
             && result.textContent.includes('-') === false
-            && result.textContent.includes('x') === false) {
+            && result.textContent.includes('x') === false
+            && result.textContent.includes('/') === false) {
         
             if(result.textContent === '') {
                 
@@ -205,6 +206,18 @@ function() {
 
                 result.textContent += `${this.textContent}`
                 let positionTwo = result.textContent.slice(result.textContent.indexOf('x')+1)
+                numberTwo = Number(positionTwo)
+            }
+        }
+        else if (result.textContent.includes('/') === true) {
+
+            if (result.textContent.charAt(result.textContent.indexOf('/') + 2) === '') {
+                result.textContent
+            }
+            else {
+
+                result.textContent += `${this.textContent}`
+                let positionTwo = result.textContent.slice(result.textContent.indexOf('/')+1)
                 numberTwo = Number(positionTwo)
             }
         }
