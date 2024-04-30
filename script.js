@@ -8,9 +8,6 @@ function addNumber(a,b) {
 
 }
 
-function subtractNumber(a,b) {
-    return a-b
-}
 
 function buttonNumber() {
 
