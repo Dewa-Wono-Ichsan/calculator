@@ -1,5 +1,4 @@
 let numberOne = 0
-let operator = ''
 let numberTwo = 0
 
 
