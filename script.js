@@ -20,19 +20,6 @@ function divideNumber(a,b) {
     return a/b
 }
 
-function operatorNumbers() {
-
-    numberOne
-    operator
-    numberTwo
-
-    addNumber(numberOne, numberTwo)
-    subtractNumber(numberOne,numberTwo)
-    multiplyNumber(numberOne,numberTwo)
-    divideNumber(numberOne,numberTwo)
-    
-}
-
 function buttonNumber() {
 
     if (result.textContent.includes('+') === false
