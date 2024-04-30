@@ -12,11 +12,6 @@ function subtractNumber(a,b) {
     return a-b
 }
 
-function multiplyNumber(a,b) {
-    return a*b
-}
-
-
 function buttonNumber() {
 
     if (result.textContent.includes('+') === false
