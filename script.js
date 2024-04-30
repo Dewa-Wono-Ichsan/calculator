@@ -33,126 +33,110 @@ function operatorNumbers() {
     
 }
 
+function buttonNumber() {
+
+    if (result.textContent.includes('+') === false
+        && result.textContent.includes('-') === false
+        && result.textContent.includes('x') === false
+        && result.textContent.includes('/') === false) {
+
+    
+        result.textContent += `${this.textContent}`
+        numberOne = Number(result.textContent)
+    }
+    else if (result.textContent.includes('+') === true) {
+        
+        if (result.textContent.at(-1) === '+') {
+        
+            result.textContent += ` ${this.textContent}`
+        } 
+        else {
+        
+            result.textContent += `${this.textContent}`
+        }
+        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
+    }
+    else if (result.textContent.includes('-') === true) {
+        
+        if (result.textContent.at(-1) === '-') {
+        
+            result.textContent += ` ${this.textContent}`
+        } 
+        else {
+        
+            result.textContent += `${this.textContent}`
+        }
+        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('-') + 1))
+    }
+    else if (result.textContent.includes('x') === true) {
+        
+        if (result.textContent.at(-1) === 'x') {
+        
+            result.textContent += ` ${this.textContent}`
+        } 
+        else {
+        
+            result.textContent += `${this.textContent}`
+        }
+        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('x') + 1))
+    }
+    else if (result.textContent.includes('/') === true) {
+        
+        if (result.textContent.at(-1) === '/') {
+        
+            result.textContent += ` ${this.textContent}`
+        } 
+        else {
+        
+            result.textContent += `${this.textContent}`
+        }
+        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('/') + 1))
+    }
+}
+
 const result = document.querySelector('.result-number')
 
 const one = document.querySelector('button#number-one')
-one.addEventListener('click',
-function() {
-
-        if (result.textContent.includes('+') === false
-            && result.textContent.includes('-') === false
-            && result.textContent.includes('x') === false
-            && result.textContent.includes('/') === false) {
-
-        
-            result.textContent += `${this.textContent}`
-            numberOne = Number(result.textContent)
-        }
-        else if (result.textContent.includes('+') === true) {
-            
-            if (result.textContent.at(-1) === '+') {
-            
-                result.textContent += ` ${this.textContent}`
-            } 
-            else {
-            
-                result.textContent += `${this.textContent}`
-            }
-            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
-        }
-        else if (result.textContent.includes('-') === true) {
-            
-            if (result.textContent.at(-1) === '-') {
-            
-                result.textContent += ` ${this.textContent}`
-            } 
-            else {
-            
-                result.textContent += `${this.textContent}`
-            }
-            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('-') + 1))
-        }
-        else if (result.textContent.includes('x') === true) {
-            
-            if (result.textContent.at(-1) === 'x') {
-            
-                result.textContent += ` ${this.textContent}`
-            } 
-            else {
-            
-                result.textContent += `${this.textContent}`
-            }
-            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('x') + 1))
-        }
-        else if (result.textContent.includes('/') === true) {
-            
-            if (result.textContent.at(-1) === '/') {
-            
-                result.textContent += ` ${this.textContent}`
-            } 
-            else {
-            
-                result.textContent += `${this.textContent}`
-            }
-            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('/') + 1))
-        }
-    }
+one.addEventListener('click', buttonNumber
 )
 
 const two = document.querySelector('button#number-two')
-two.addEventListener('click',
-function() {
-    result.textContent = numberOne = 2
-    }
+two.addEventListener('click', buttonNumber
 )
 
 const three = document.querySelector('button#number-three')
 three.addEventListener('click',
-function() {
-    result.textContent = numberOne = 3
-    }
+buttonNumber
 )
 
 const four = document.querySelector('button#number-four')
 four.addEventListener('click',
-function() {
-    result.textContent = numberOne = 4
-    }
+buttonNumber
 )
 
 const five = document.querySelector('button#number-five')
 five.addEventListener('click',
-function() {
-    result.textContent = numberOne = 5
-    }
+buttonNumber
 )
 
 const six = document.querySelector('button#number-six')
 six.addEventListener('click',
-function() {
-    result.textContent = numberOne = 6
-    }
+buttonNumber
 )
 
 const seven = document.querySelector('button#number-seven')
 seven.addEventListener('click',
-function() {
-    result.textContent = numberOne = 7
-    }
+buttonNumber
 )
 
 const eight = document.querySelector('button#number-eight')
 eight.addEventListener('click',
-function() {
-    result.textContent = numberOne = 8
-    }
+buttonNumber
 )
 
 const nine = document.querySelector('button#number-nine')
 nine.addEventListener('click',
-function() {
-    result.textContent = numberOne = 9
-    }
+buttonNumber
 )
 
 const zero = document.querySelector('button#number-zero')
