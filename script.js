@@ -768,6 +768,10 @@ body.addEventListener('keydown'
 
             keyDivide('/')
         }
+        if (e.key === '=') {
+
+            keyEqual()
+        }
     }
 )
 
@@ -1308,4 +1312,71 @@ function keyDivide(keyboardValue) {
         numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${keyboardValue}`)))
         numberTwo = 0
     }    
+}
+
+function keyEqual() {
+
+    if (result.textContent.includes('+')) {
+
+        result.textContent = `${numberOne + numberTwo}`
+    
+        if (result.textContent.includes('.') === true 
+            && result.textContent
+            .slice(
+                    result.textContent
+                    .indexOf('.'))
+            .length > 2) {
+
+            result.textContent = `${(numberOne + numberTwo).toFixed(2)}`
+        }
+    }
+    else if (result.textContent.includes('-')) {
+
+        result.textContent = `${numberOne - numberTwo}`
+
+        if (result.textContent.includes('.') === true 
+            && result.textContent
+            .slice(
+                    result.textContent
+                    .indexOf('.'))
+            .length > 2) {
+
+            result.textContent = `${(numberOne - numberTwo).toFixed(2)}`
+        }
+    }
+    else if (result.textContent.includes('x')) {
+
+        result.textContent = `${numberOne * numberTwo}`
+
+        if (result.textContent.includes('.') === true 
+            && result.textContent
+            .slice(
+                    result.textContent
+                    .indexOf('.'))
+            .length > 2) {
+
+            result.textContent = `${(numberOne * numberTwo).toFixed(2)}`
+        }
+    }
+    else if (result.textContent.includes('/')) {
+        if (numberTwo === 0) {
+            alert('cannot divide with number zero')
+        }
+        else if (numberTwo > 0) {
+
+            result.textContent = `${numberOne / numberTwo}`
+
+            if (result.textContent.includes('.') === true 
+                && result.textContent
+                .slice(
+                        result.textContent
+                        .indexOf('.'))
+                .length > 2) {
+
+                result.textContent = `${(numberOne / numberTwo).toFixed(2)}`
+            }
+        }
+    }
+    numberOne = Number(result.textContent)
+    numberTwo = 0
 }
