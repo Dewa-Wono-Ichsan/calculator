@@ -705,3 +705,74 @@ undo.addEventListener('click', function() {
 )
 
 const body = document.querySelector('body')
+body.addEventListener('keydown'
+, function (e) {
+    
+    if (e.key === '1') {
+
+        keyNumber('1')
+    }
+    
+    }
+)
+
+function keyNumber(keyboardValue) {
+
+    if (result.textContent.includes('+') === false
+        && result.textContent.includes('-') === false
+        && result.textContent.includes('x') === false
+        && result.textContent.includes('/') === false) {
+
+    
+        result.textContent += `${keyboardValue}`
+        numberOne = Number(result.textContent)
+    }
+    else if (result.textContent.includes('+') === true) {
+        
+        if (result.textContent.at(-1) === '+') {
+        
+            result.textContent += ` ${keyboardValue}`
+        } 
+        else {
+        
+            result.textContent += `${keyboardValue}`
+        }
+        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
+    }
+    else if (result.textContent.includes('-') === true) {
+        
+        if (result.textContent.at(-1) === '-') {
+        
+            result.textContent += ` ${keyboardValue}`
+        } 
+        else {
+        
+            result.textContent += `${keyboardValue}`
+        }
+        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('-') + 1))
+    }
+    else if (result.textContent.includes('x') === true) {
+        
+        if (result.textContent.at(-1) === 'x') {
+        
+            result.textContent += ` ${keyboardValue}`
+        } 
+        else {
+        
+            result.textContent += `${keyboardValue}`
+        }
+        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('x') + 1))
+    }
+    else if (result.textContent.includes('/') === true) {
+        
+        if (result.textContent.at(-1) === '/') {
+        
+            result.textContent += ` ${keyboardValue}`
+        } 
+        else {
+        
+            result.textContent += `${keyboardValue}`
+        }
+        numberTwo = Number(result.textContent.slice(result.textContent.indexOf('/') + 1))
+    }
+}
