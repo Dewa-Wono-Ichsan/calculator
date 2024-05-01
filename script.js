@@ -788,6 +788,10 @@ body.addEventListener('keydown'
 
             keyClear()
         }
+        if (e.key === 'Delete') {
+
+            keyClearAll()
+        }
     }
 )
 
@@ -1403,30 +1407,37 @@ function keyClear() {
 
             result.textContent = result.textContent.split('').toSpliced(result.textContent.length-2).join('')
             numberTwo = 0
-        }
+    }
     else {
 
-            result.textContent = result.textContent.split('').toSpliced(result.textContent.length-1).join('')
+        result.textContent = result.textContent.split('').toSpliced(result.textContent.length-1).join('')
 
-            if (result.textContent.includes('+') === true) {
+        if (result.textContent.includes('+') === true) {
 
-                numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
-            }
-            else if (result.textContent.includes('-') === true) {
-                numberTwo = Number(result.textContent.slice(result.textContent.indexOf('-') + 1))
-            }
-            else if (result.textContent.includes('x') === true) {
-                numberTwo = Number(result.textContent.slice(result.textContent.indexOf('x') + 1))
-            }
-            else if (result.textContent.includes('/') === true) {
-                numberTwo = Number(result.textContent.slice(result.textContent.indexOf('/') + 1))
-            }
-            else if (result.textContent.includes('+') === false
-                    && result.textContent.includes('-') === false
-                    && result.textContent.includes('x') === false
-                    && result.textContent.includes('/') === false) {
+            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
+        }
+        else if (result.textContent.includes('-') === true) {
+            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('-') + 1))
+        }
+        else if (result.textContent.includes('x') === true) {
+            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('x') + 1))
+        }
+        else if (result.textContent.includes('/') === true) {
+            numberTwo = Number(result.textContent.slice(result.textContent.indexOf('/') + 1))
+        }
+        else if (result.textContent.includes('+') === false
+                && result.textContent.includes('-') === false
+                && result.textContent.includes('x') === false
+                && result.textContent.includes('/') === false) {
 
-                numberOne = Number(result.textContent)
-            }
-        }    
-    }
+            numberOne = Number(result.textContent)
+        }
+    }    
+}
+
+function keyClearAll() {
+    
+    result.textContent = ''
+    numberOne = 0
+    numberTwo = 0
+}
