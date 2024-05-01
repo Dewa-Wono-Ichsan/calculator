@@ -708,11 +708,42 @@ const body = document.querySelector('body')
 body.addEventListener('keydown'
 , function (e) {
     
-    if (e.key === '1') {
+        if (e.key === '1') {
 
-        keyNumber('1')
-    }
-    
+            keyNumber('1')
+        }
+        if (e.key === '2') {
+
+            keyNumber('2')
+        }
+        if (e.key === '3') {
+
+            keyNumber('3')
+        }
+        if (e.key === '4') {
+
+            keyNumber('4')
+        }
+        if (e.key === '5') {
+
+            keyNumber('5')
+        }
+        if (e.key === '6') {
+
+            keyNumber('6')
+        }
+        if (e.key === '7') {
+
+            keyNumber('7')
+        }
+        if (e.key === '8') {
+
+            keyNumber('8')
+        }
+        if (e.key === '9') {
+
+            keyNumber('9')
+        }
     }
 )
 
