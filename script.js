@@ -748,6 +748,9 @@ body.addEventListener('keydown'
 
             keyNumberZero('0')
         }
+        if (e.key === '.') {
+            keyDecimal('.')
+        }
     }
 )
 
@@ -757,7 +760,6 @@ function keyNumber(keyboardValue) {
         && result.textContent.includes('-') === false
         && result.textContent.includes('x') === false
         && result.textContent.includes('/') === false) {
-
     
         result.textContent += `${keyboardValue}`
         numberOne = Number(result.textContent)
@@ -874,6 +876,88 @@ function keyNumberZero(keyboardValue) {
             result.textContent += `${keyboardValue}`
             let positionTwo = result.textContent.slice(result.textContent.indexOf('/')+1)
             numberTwo = Number(positionTwo)
+        }
+    }
+}
+
+function keyDecimal(keyboardValue) {
+
+    if (result.textContent.includes('+') === false
+        && result.textContent.includes('-') === false
+        && result.textContent.includes('x') === false
+        && result.textContent.includes('/') === false) {
+    
+        if(result.textContent === '') {
+
+            result.textContent = 0 + keyboardValue
+        }
+        else if (result.textContent.includes('.')) {
+        
+            result.textContent
+        } 
+        else {
+
+            result.textContent += keyboardValue
+        }
+    }
+    else if (result.textContent.includes('+') === true) {
+
+        if (result.textContent.charAt(result.textContent.indexOf('+') + 2) === '') {
+
+            result.textContent += ` ${0 + keyboardValue}`
+        }
+        else if (result.textContent.slice(result.textContent.indexOf('+') + 1).includes('.') === false) {
+            
+            result.textContent += keyboardValue
+        }
+        else {
+
+            result.textContent
+        }
+    }
+    else if (result.textContent.includes('-') === true) {
+
+        if (result.textContent.charAt(result.textContent.indexOf('-') + 2) === '') {
+
+            result.textContent += ` ${0 + keyboardValue}`
+        }
+        else if (result.textContent.slice(result.textContent.indexOf('-') + 1).includes('.') === false) {
+            
+            result.textContent += keyboardValue
+        }
+        else {
+
+            result.textContent
+        }
+    }
+    else if (result.textContent.includes('x') === true) {
+
+        if (result.textContent.charAt(result.textContent.indexOf('x') + 2) === '') {
+
+            result.textContent += ` ${0 + keyboardValue}`
+        }
+        else if (result.textContent.slice(result.textContent.indexOf('x') + 1).includes('.') === false) {
+            
+            result.textContent += keyboardValue
+        }
+        else {
+
+            result.textContent
+        }
+    }
+    else if (result.textContent.includes('/') === true) {
+
+        if (result.textContent.charAt(result.textContent.indexOf('/') + 2) === '') {
+
+            result.textContent += ` ${0 + keyboardValue}`
+        }
+        else if (result.textContent.slice(result.textContent.indexOf('/') + 1).includes('.') === false) {
+            
+            result.textContent += keyboardValue
+        }
+        else {
+
+            result.textContent
         }
     }
 }
