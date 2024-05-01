@@ -744,6 +744,10 @@ body.addEventListener('keydown'
 
             keyNumber('9')
         }
+        if (e.key === '0') {
+
+            keyNumberZero('0')
+        }
     }
 )
 
@@ -805,5 +809,71 @@ function keyNumber(keyboardValue) {
             result.textContent += `${keyboardValue}`
         }
         numberTwo = Number(result.textContent.slice(result.textContent.indexOf('/') + 1))
+    }
+}
+
+function keyNumberZero(keyboardValue) {
+    if (result.textContent.includes('+') === false
+        && result.textContent.includes('-') === false
+        && result.textContent.includes('x') === false
+        && result.textContent.includes('/') === false) {
+    
+        if(result.textContent === '') {
+            
+            result.textContent
+        }
+        else {
+        
+            result.textContent += `${keyboardValue}`
+            numberOne = Number(result.textContent)
+        }
+    }
+    else if (result.textContent.includes('+') === true) {
+
+        if (result.textContent.charAt(result.textContent.indexOf('+') + 2) === '') {
+            result.textContent
+        }
+        else {
+
+            result.textContent += `${keyboardValue}`
+            let positionTwo = result.textContent.slice(result.textContent.indexOf('+')+1)
+            numberTwo = Number(positionTwo)
+        }
+    }
+    else if (result.textContent.includes('-') === true) {
+
+        if (result.textContent.charAt(result.textContent.indexOf('-') + 2) === '') {
+            result.textContent
+        }
+        else {
+
+            result.textContent += `${keyboardValue}`
+            let positionTwo = result.textContent.slice(result.textContent.indexOf('-')+1)
+            numberTwo = Number(positionTwo)
+        }
+    }
+    else if (result.textContent.includes('x') === true) {
+
+        if (result.textContent.charAt(result.textContent.indexOf('x') + 2) === '') {
+            result.textContent
+        }
+        else {
+
+            result.textContent += `${keyboardValue}`
+            let positionTwo = result.textContent.slice(result.textContent.indexOf('x')+1)
+            numberTwo = Number(positionTwo)
+        }
+    }
+    else if (result.textContent.includes('/') === true) {
+
+        if (result.textContent.charAt(result.textContent.indexOf('/') + 2) === '') {
+            result.textContent
+        }
+        else {
+
+            result.textContent += `${keyboardValue}`
+            let positionTwo = result.textContent.slice(result.textContent.indexOf('/')+1)
+            numberTwo = Number(positionTwo)
+        }
     }
 }
