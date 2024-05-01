@@ -695,8 +695,20 @@ undo.addEventListener('click', function() {
             if (result.textContent.includes('+') === true) {
 
                 numberTwo = Number(result.textContent.slice(result.textContent.indexOf('+') + 1))
-            } 
-            else if (result.textContent.includes('+') === false) {
+            }
+            else if (result.textContent.includes('-') === true) {
+                numberTwo = Number(result.textContent.slice(result.textContent.indexOf('-') + 1))
+            }
+            else if (result.textContent.includes('x') === true) {
+                numberTwo = Number(result.textContent.slice(result.textContent.indexOf('x') + 1))
+            }
+            else if (result.textContent.includes('/') === true) {
+                numberTwo = Number(result.textContent.slice(result.textContent.indexOf('/') + 1))
+            }
+            else if (result.textContent.includes('+') === false
+                    && result.textContent.includes('-') === false
+                    && result.textContent.includes('x') === false
+                    && result.textContent.includes('/') === false) {
 
                 numberOne = Number(result.textContent)
             }
