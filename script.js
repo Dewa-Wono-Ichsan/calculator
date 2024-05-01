@@ -749,10 +749,16 @@ body.addEventListener('keydown'
             keyNumberZero('0')
         }
         if (e.key === '.') {
+            
             keyDecimal('.')
         }
         if (e.key === '+') {
+            
             keyAdd('+')
+        }
+        if (e.key === '-') {
+
+            keySubtract('-')
         }
     }
 )
@@ -1033,6 +1039,89 @@ function keyAdd(keyboardValue) {
             result.textContent = `${numberOne / numberTwo} ${keyboardValue}`
         
             if (result.textContent.includes('.') === true
+                && result.textContent
+                    .slice(
+                        result.textContent
+                        .indexOf('.'))
+                    .length > 2
+                ) {
+                result.textContent = `${(numberOne / numberTwo).toFixed(2)} ${keyboardValue}`
+            }
+            numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${keyboardValue}`)))
+            numberTwo = 0
+        }
+
+    }
+}
+
+function keySubtract(keyboardValue) {
+    
+    if (result.textContent.includes(`${keyboardValue}`) === false
+        && result.textContent.includes('+') === false
+        && result.textContent.includes('x') === false
+        && result.textContent.includes('/') === false) {
+
+        result.textContent += ` ${keyboardValue} `
+    } 
+    else if (result.textContent.includes(`${keyboardValue}`) === true) {
+
+        result.textContent = `${numberOne - numberTwo} ${keyboardValue}`
+    
+        if (result.textContent.includes('.') === true 
+            && result.textContent
+                .slice(
+                    result.textContent
+                    .indexOf('.'))
+                .length > 2
+            ) {
+            result.textContent = `${(numberOne - numberTwo).toFixed(2)} ${keyboardValue}`
+        }
+        numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${keyboardValue}`)))
+        numberTwo = 0
+    }
+    else if (result.textContent.includes(`+`) === true) {
+
+        result.textContent = `${numberOne + numberTwo} ${keyboardValue}`
+    
+        if (result.textContent.includes('.') === true
+            && result.textContent
+                .slice(
+                    result.textContent
+                    .indexOf('.'))
+                .length > 2
+            ) {
+            result.textContent = `${(numberOne + numberTwo).toFixed(2)} ${keyboardValue}`
+        }
+        numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${keyboardValue}`)))
+        numberTwo = 0
+    }
+    else if (result.textContent.includes(`x`) === true) {
+
+        result.textContent = `${numberOne * numberTwo} ${keyboardValue}`
+    
+        if (result.textContent.includes('.') === true
+            && result.textContent
+                .slice(
+                    result.textContent
+                    .indexOf('.'))
+                .length > 2
+            ) {
+            result.textContent = `${(numberOne * numberTwo).toFixed(2)} ${keyboardValue}`
+        }
+        numberOne = Number(result.textContent.slice(0, result.textContent.indexOf(`${keyboardValue}`)))
+        numberTwo = 0
+    }
+    else if (result.textContent.includes('/') === true) {
+
+        if (numberTwo === 0) {
+
+            alert('cannot divide with number zero')
+        }
+        else if (numberTwo > 0) {
+
+            result.textContent = `${numberOne / numberTwo} ${keyboardValue}`
+        
+            if (result.textContent.includes('.') === true 
                 && result.textContent
                     .slice(
                         result.textContent
