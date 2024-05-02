@@ -23,6 +23,9 @@ div.container-operator > button {
 
     height: 50px;
     width: 70px;
+    font-size: 1.5rem;
+    background-color: darkred;
+    color: white;
 }
 
 #clear, #undo {
