@@ -10,6 +10,13 @@ div.container-number > button {
 
     height: 75px;
     width: 93px;
+    font-size: 2rem;
+    background-color: burlywood;
+}
+
+button#decimal-sign, button#equal-sign {
+
+    background-color: aliceblue;
 }
 
 div.container-operator > button {
