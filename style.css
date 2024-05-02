@@ -5,3 +5,9 @@ div.container-number {
     display: flex;
     flex-wrap: wrap;
 }
+
+div.container-number > button {
+
+    height: 75px;
+    width: 93px;
+}
