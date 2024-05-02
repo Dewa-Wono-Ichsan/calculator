@@ -17,3 +17,9 @@ div.container-operator > button {
     height: 50px;
     width: 70px;
 }
+
+#clear, #undo {
+
+    height: 30px;
+    width: 140px;
+}
